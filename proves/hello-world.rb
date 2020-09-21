@@ -29,6 +29,7 @@ puts "#{quantity} x #{price}€ -> #{total}€"
 account = 1000
 interest = 0.05
 years = 10
+puts "account: #{account}, interest: #{interest}, years: #{years}"
 
 current_year = 1  # variable inicialitzada
 
@@ -43,6 +44,8 @@ end
 # Exemple de funció
 
 def calculate_interest(account, interest, years)
+
+    puts "account: #{account}, interest: #{interest}, years: #{years}"
 
     current_year = 1  # variable inicialitzada
 
