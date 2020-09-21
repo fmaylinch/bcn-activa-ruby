@@ -24,3 +24,40 @@ total = quantity * price
 puts "#{quantity} x #{price}€ -> #{total}€"
 
 
+# Instrucció "while", per repetir instruccions
+
+account = 1000
+interest = 0.05
+years = 10
+
+current_year = 1  # variable inicialitzada
+
+while current_year <= years  # condició sobre la variable
+    increment = account * interest
+    account += increment
+    puts "year #{current_year} : #{increment} -> #{account}"
+    current_year += 1  # increment de la variable
+end
+
+
+# Exemple de funció
+
+def calculate_interest(account, interest, years)
+
+    current_year = 1  # variable inicialitzada
+
+    while current_year <= years  # condició sobre la variable
+        increment = account * interest
+        account += increment
+        puts "year #{current_year} : #{increment} -> #{account}"
+        current_year += 1  # increment de la variable
+    end
+
+end
+
+
+calculate_interest(500, 0.05, 3)
+calculate_interest(1000, 0.15, 4)
+
+
+
