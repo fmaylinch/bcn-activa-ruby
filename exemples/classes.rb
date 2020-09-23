@@ -1,4 +1,4 @@
-require_relative './Movie'
+require_relative 'Movie'
 
 movie1 = Movie.new("Source code", 8)
 movie2 = Movie.new("Inception", 9)

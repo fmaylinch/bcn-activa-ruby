@@ -4,6 +4,7 @@ puts "Hello world"  # imprimir un missatge - print message
 name = "Ferran"  # assignació de variable - variable assignment
 day = 21
 
+
 price = 3
 quantity = 10
 
