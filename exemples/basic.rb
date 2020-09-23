@@ -1,14 +1,14 @@
 
-puts "Start"  # imprimir un missatge a pantalla
+puts "Hello world"  # imprimir un missatge - print message
 
 name = "Ferran"  # assignació de variable - variable assignment
 day = 21
-# puts "Hola, em dic #{name}, avui es dia #{day} i comencem el curs"
 
 price = 3
 quantity = 10
+
 # Operadors de comparació: > < >= <= == !=
-# discounted = quantity >= 3  # valor "boolean"
+# discounted = quantity >= 3  # valor "boolean" (true / false)
 
 # Instrucció "if", per posar condicions
 if quantity >= 10
@@ -39,28 +39,3 @@ while current_year <= years  # condició sobre la variable
     puts "year #{current_year} : #{increment} -> #{account}"
     current_year += 1  # increment de la variable
 end
-
-
-# Exemple de funció
-
-def calculate_interest(account, interest, years)
-
-    puts "account: #{account}, interest: #{interest}, years: #{years}"
-
-    current_year = 1  # variable inicialitzada
-
-    while current_year <= years  # condició sobre la variable
-        increment = account * interest
-        account += increment
-        puts "year #{current_year} : #{increment} -> #{account}"
-        current_year += 1  # increment de la variable
-    end
-
-end
-
-
-calculate_interest(500, 0.05, 3)
-calculate_interest(1000, 0.15, 4)
-
-
-
