@@ -36,6 +36,6 @@ current_year = 1  # variable inicialitzada
 while current_year <= years  # condició sobre la variable
     increment = account * interest
     account += increment
-    puts "year #{current_year} : #{increment} -> #{account}"
+    puts "year #{current_year} : #{increment.round(2)} -> #{account.round(2)}"
     current_year += 1  # increment de la variable
 end
