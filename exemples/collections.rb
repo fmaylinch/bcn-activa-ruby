@@ -4,7 +4,7 @@ puts "--- arrays ---"
 array = [6, 1, 4]
 puts "Display array using puts:"
 puts array
-puts "Display array using p:"
+# puts "Display array using p:"
 # p array
 puts "Display array interpolated: #{array}"
 puts "First element: #{array[0]}"
@@ -13,6 +13,12 @@ array << 3
 array << 7
 array[2] = 8
 puts "Array after changes: #{array}"
+
+array2 = array.map { |x| x + 3 }  # map (transform) elements
+puts "array2, created with map: #{array2}"
+array3 = array.select { |x| x > 5 }  # select some elements
+puts "array3, created with select: #{array3}"
+
 puts "length: #{array.length}"
 array.sort!()
 puts "Array after sorting: #{array}"
