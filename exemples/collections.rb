@@ -74,3 +74,11 @@ puts "for loop in map.values:"
 for v in map.values
     puts v
 end
+
+puts "for loop with range:"
+x = 3
+y = 7
+for i in x..y
+    puts i
+end
+
