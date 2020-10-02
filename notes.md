@@ -10,9 +10,8 @@
 - `rbenv install 2.7.1`
 - `rbenv global 2.7.1`
 - `gem env`, `gem env home` to see paths and other info
-
-- `gem install bundler`
-- `bundler init` : creates Gemfile
-- `bundler add sinatra` --> adds gem to Gemfile
-
-- `ruby main.rb` --> starts program
+- `gem list` : list of installed gems
+- `gem install bundler` : installs the gem "bundler"
+- `bundle init` : creates Gemfile
+- `bundle add sinatra` : adds gem to Gemfile
+- `bundle install` : installs gems if necessary
