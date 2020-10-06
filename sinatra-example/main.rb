@@ -3,10 +3,26 @@
 
 require "sinatra"
 require "erb"
+require_relative "fake_sinatra"
+
+
+fake_sinatra = FakeSinatra.new
+
+fake_sinatra.get "/one" do
+  fake_sinatra.erb :welcome, { }
+end
+
+fake_sinatra.get "/two" do
+  fake_sinatra.erb :product_detail, { }
+end
+
+# puts fake_sinatra.simulate_http_request "/one"
+# puts fake_sinatra.simulate_http_request "/two"
+
 
 get "/" do
   # displays the welcome.erb template inside the layout.erb
-  erb :welcome, { :locals => params }
+  fake_sinatra.erb :welcome, { :locals => params }
 end
 
 get "/help" do

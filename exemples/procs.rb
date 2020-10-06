@@ -20,4 +20,4 @@ explicit_block(3) do |number|
     puts number + 30
 end
 
-explicit_block(4) { |number| puts number + 44 }
+explicit_block(4) { |number| puts number + 40 }
