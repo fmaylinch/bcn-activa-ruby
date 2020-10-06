@@ -9,7 +9,9 @@
 - `rbenv which ruby`
 - `rbenv install 2.7.1`
 - `rbenv global 2.7.1`
-- `gem env`, `gem env home` to see paths and other info
+- `gem env` : see configuration of ruby and gem
+- `gem env home` : see home path (check these paths: home, gemdir, gempath)
+- `GEM_HOME`, `GEM_PATH` : environment variables with the desired gem directory
 - `gem list` : list of installed gems
 - `gem install bundler` : installs the gem "bundler"
 - `bundle init` : creates Gemfile
