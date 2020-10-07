@@ -6,23 +6,17 @@ require "erb"
 require_relative "fake_sinatra"
 
 
-fake_sinatra = FakeSinatra.new
+# http://sinatrarb.com/configuration.html
+# If you want to test from other computers in your local network.
+# You can also use the command line option: -o "0.0.0.0"
+#set :bind, '0.0.0.0'
 
-fake_sinatra.get "/one" do
-  fake_sinatra.erb :welcome, { }
-end
 
-fake_sinatra.get "/two" do
-  fake_sinatra.erb :product_detail, { }
-end
-
-# puts fake_sinatra.simulate_http_request "/one"
-# puts fake_sinatra.simulate_http_request "/two"
-
+# routes
 
 get "/" do
   # displays the welcome.erb template inside the layout.erb
-  fake_sinatra.erb :welcome, { :locals => params }
+  erb :welcome, { :locals => params }
 end
 
 get "/help" do
@@ -37,3 +31,20 @@ get "/products/:id" do
   # displays the product_detail.erb template inside the layout.erb
   erb :product_detail, { :locals => params }
 end
+
+
+# FakeSinatra
+
+fake_sinatra = FakeSinatra.new
+
+fake_sinatra.get "/one" do
+  fake_sinatra.erb :welcome, { }
+end
+
+fake_sinatra.get "/two" do
+  fake_sinatra.erb :product_detail, { }
+end
+
+# simulate that I use the browser to go to this path
+# puts fake_sinatra.simulate_http_request "/one"
+# puts fake_sinatra.simulate_http_request "/two"
