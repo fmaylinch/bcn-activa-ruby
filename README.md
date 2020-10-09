@@ -2,18 +2,11 @@
 
 ## Today
 
-- Review [exercises](exercicis/various.rb)
-- Understand how Sinatra works
-    - [Procs]
-    - [Files]
-    - [String.gsub]
-    - Define a class [FakeSinatra] and methods get and erb
-    - Extra: [code documentation]
-- [Emmet]
-- More about HTML / CSS
-- Markdown (syntax of this `README.md`)
-- [erb] syntax (variables, loops)
+- Review last [exercise](exercicis/various.rb)
 
+- See [code documentation] in [FakeSinatra].
+- [Emmet] config for VSCode in erb templates
+- [erb] syntax (variables, loops)
 
 [Procs]: https://www.rubyguides.com/2016/02/ruby-procs-and-lambdas/
 [Files]: https://www.rubyguides.com/2015/05/working-with-files-ruby/

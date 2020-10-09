@@ -192,6 +192,8 @@ end
 # 8. Escriu una classe, que anomenarem CounterMap, que va acumulant
 #    contadors segons una clau. Abaix un exemple de com ha de funcionar.
 #    Afegeix els atributs i mètodes necessaris.
+#
+#    Nota: veure com s'usa el map (@routes) a la classe FakeSinatra
 
 =begin
 cm = CounterMap.new()
