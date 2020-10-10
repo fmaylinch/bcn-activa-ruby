@@ -28,7 +28,9 @@ user_service = UserService.new
 get "/users/:id" do
   # user = User.find_by(id: params[:id])
   users = user_service.find_by_id(params[:id].to_i)
-  users.map { |u| "#{u.id} #{u.name} #{u.age}" }.join(", ")
+  users.map { |u|
+    "#{u.id}, #{u.name}, #{u.age}, #{u.created_at.strftime(UserService::DATE_FORMAT)}, #{u.updated_at.strftime(UserService::DATE_FORMAT)}"
+  }.join(", ")
 end
 
 get "/users" do

@@ -1,17 +1,16 @@
 class User
-  attr_accessor :id, :name, :age
-  def initialize(id, name, age)
+  attr_accessor :id, :name, :age, :created_at, :updated_at
+  def initialize(id, name, age, created_at = Time.now, updated_at = Time.now)
     @id = id
     @name = name
     @age = age
+    @created_at = created_at
+    @updated_at = updated_at
   end
 
-  # Static methods, so simulate ActiveRecord
+  # Static methods, to simulate ActiveRecord
 =begin
-  @@users = [
-      User.new(1, "Jon", 25),
-      User.new(2, "Jane", 20)
-  ]
+  @@users = UserService.new.all
 
   def self.all
     @@users
@@ -25,11 +24,13 @@ end
 
 class UserService
 
+  attr_reader :date_format
+
+  # https://www.rubyguides.com/2017/07/ruby-constants/
+  DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
+
   def initialize
-    @users = [
-        User.new(1, "Jon", 25),
-        User.new(2, "Jane", 20)
-    ]
+    @users = read_users_from_file
   end
 
   def all
@@ -38,5 +39,24 @@ class UserService
 
   def find_by_id(id)
     @users.select { |u| u.id == id }
+  end
+
+  private
+
+  def create_hardcoded_users
+    [ User.new(1, "Jon", 25), User.new(2, "Jane", 20) ]
+  end
+
+  def read_users_from_file
+    # https://www.rubyguides.com/2015/05/working-with-files-ruby/
+    lines = File.readlines("db/users.csv").map(&:chomp)
+    lines.map do |line|
+      # https://ruby-doc.org/core-2.7.2/doc/syntax/assignment_rdoc.html#label-Array+Decomposition
+      (id, name, age, created_str, updated_str) = line.split(",")
+      # https://www.rubyguides.com/2015/12/ruby-time/
+      created_at = Time.strptime(created_str, DATE_FORMAT)
+      updated_at = Time.strptime(updated_str, DATE_FORMAT)
+      User.new(id.to_i, name, age.to_i, created_at, updated_at)
+    end
   end
 end
