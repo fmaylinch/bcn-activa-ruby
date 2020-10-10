@@ -7,7 +7,8 @@ require_relative "fake_sinatra"
 require "json"
 
 require "sinatra/activerecord"
-require_relative "db/models"
+#require_relative "db/models"
+require_relative "model/user"
 
 # http://sinatrarb.com/configuration.html
 # If you want to test from other computers in your local network.
@@ -22,13 +23,17 @@ get "/" do
   erb :welcome, { :locals => params }
 end
 
+user_service = UserService.new
+
 get "/users/:id" do
-  user = User.find_by(id: params[:id])
-  user.name
+  # user = User.find_by(id: params[:id])
+  users = user_service.find_by_id(params[:id].to_i)
+  users.map { |u| "#{u.id} #{u.name} #{u.age}" }.join(", ")
 end
 
 get "/users" do
-  users = User.all
+  # users = User.all
+  users = user_service.all
   users.map { |u| "#{u.id} #{u.name} #{u.age}" }.join(", ")
 end
 
