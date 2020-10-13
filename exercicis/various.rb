@@ -195,16 +195,42 @@ end
 #
 #    Nota: veure com s'usa el map (@routes) a la classe FakeSinatra
 
-=begin
-cm = CounterMap.new()
+class CounterMap
+
+  def initialize
+    @counters = { }
+  end
+
+  def add(key, amount)
+    if not @counters[key]
+      @counters[key] = 0
+    end
+    @counters[key] += amount
+  end
+
+  def get(key)
+    @counters[key]
+  end
+
+  def total
+    @counters.values.sum
+  end
+
+  def reset(key)
+    @counters[key] = 0
+  end
+end
+
+puts "CounterMap"
+
+cm = CounterMap.new
 cm.add("a", 2)
 cm.add("a", 4)
 cm.add("b", 5)
 puts cm.get("a") # 6
 puts cm.get("b") # 5
-puts cm.total() # 11
+puts cm.total # 11
 cm.reset("a")
 puts cm.get("a") # 0
 puts cm.get("b") # 5
-puts cm.total() # 5
-=end
+puts cm.total # 5
