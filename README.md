@@ -2,22 +2,22 @@
 
 ## Today
 
-- Review last [exercise](exercicis/various.rb)
+- Create an app (e.g. movie list) from scratch in a clean project
+- Review [Sinatra], [ActiveRecord]
+- TODO: My [ActiveRecord guide in Sinatra]
+- [Post with a form]
+- Flexbox, Google fonts, FontAwesome?
+- [Procs]
 
-- See [code documentation] in [FakeSinatra].
-- [Emmet] config for VSCode in erb templates
+## Some links
+
 - [erb] syntax (variables, loops)
-- Example with articles (title, text, image, likes)
-- Data: hardcoded, from file, from DB
-- Simulate: User.all, User.find_by
+- [Emmet] config for VSCode in erb templates
 - [ActiveRecord], [ActiveRecord in Sinatra]
-    - `gem add sinatra-activerecord sqlite3 rake`
-    - create `Rakefile`
-    - create `db/database.yml`
-    - `rake db:create_migration NAME=create_users_table`, fill it
-    - `rake db:migrate`
-    - `models.rb`, `db/seed.rb`, `rake db:seed`
+- [code documentation]
 
+
+[Sinatra]: https://webapps-for-beginners.rubymonstas.org/sinatra.html
 [Procs]: https://www.rubyguides.com/2016/02/ruby-procs-and-lambdas/
 [Files]: https://www.rubyguides.com/2015/05/working-with-files-ruby/
 [String.gsub]: https://www.rubyguides.com/2019/07/ruby-gsub-method/
@@ -27,6 +27,7 @@
 [erb]: https://webapps-for-beginners.rubymonstas.org/erb
 [ActiveRecord]: https://guides.rubyonrails.org/active_record_basics.html
 [ActiveRecord in Sinatra]: https://gist.github.com/jtallant/fd66db19e078809dfe94401a0fc814d2
+[Post with a form]: https://webapps-for-beginners.rubymonstas.org/forms.html
 
 
 ## Notes about Ruby

@@ -1,4 +1,7 @@
-class User
+##
+# This class was named User2 to avoid conflict with User in db/models.rb
+#
+class User2
   attr_accessor :id, :name, :age, :created_at, :updated_at
   def initialize(id, name, age, created_at = Time.now, updated_at = Time.now)
     @id = id
@@ -44,7 +47,7 @@ class UserService
   private
 
   def create_hardcoded_users
-    [ User.new(1, "Jon", 25), User.new(2, "Jane", 20) ]
+    [ User2.new(1, "Jon", 25), User2.new(2, "Jane", 20) ]
   end
 
   def read_users_from_file
@@ -56,7 +59,7 @@ class UserService
       # https://www.rubyguides.com/2015/12/ruby-time/
       created_at = Time.strptime(created_str, DATE_FORMAT)
       updated_at = Time.strptime(updated_str, DATE_FORMAT)
-      User.new(id.to_i, name, age.to_i, created_at, updated_at)
+      User2.new(id.to_i, name, age.to_i, created_at, updated_at)
     end
   end
 end

@@ -3,12 +3,14 @@
 
 require "sinatra"
 require "erb"
-require_relative "fake_sinatra"
 require "json"
-
 require "sinatra/activerecord"
-#require_relative "db/models"
+
+require_relative "db/models"
 require_relative "model/user"
+require_relative "model/article"
+require_relative "fake_sinatra"
+
 
 # http://sinatrarb.com/configuration.html
 # If you want to test from other computers in your local network.
@@ -16,12 +18,35 @@ require_relative "model/user"
 #set :bind, '0.0.0.0'
 
 
-# routes
+# --- routes ---
+
+
+# Simple route
 
 get "/" do
   # displays the welcome.erb template inside the layout.erb
-  erb :welcome, { :locals => params }
+  erb :welcome
 end
+
+
+# Articles
+
+article_store = ArticleStore.new
+
+get "/articles" do
+  # https://www.rubyguides.com/2015/12/ruby-time/
+  now = Time.now.strftime("%d-%m-%Y")
+  title = "Articles at #{now}"
+  articles = article_store.load    # Loading from file with ArticleStore
+  # articles = Article.all         # Loading from database with ActiveRecord
+  erb :articles, { :locals => {
+      "title" => title,
+      "articles" => articles
+  } }
+end
+
+
+# Users
 
 user_service = UserService.new
 
@@ -39,24 +64,15 @@ get "/users" do
   users.map { |u| "#{u.id} #{u.name} #{u.age}" }.join(", ")
 end
 
-get "/products/:id" do
-  # displays the product_detail.erb template inside the layout.erb
-  erb :product_detail, { :locals => params }
-end
 
 
 # FakeSinatra
 
 fake_sinatra = FakeSinatra.new
 
-fake_sinatra.get "/one" do
+fake_sinatra.get "/welcome_fake" do
   fake_sinatra.erb :welcome, { }
 end
 
-fake_sinatra.get "/two" do
-  fake_sinatra.erb :product_detail, { }
-end
-
-# simulate that I use the browser to go to this path
-# puts fake_sinatra.simulate_http_request "/one"
-# puts fake_sinatra.simulate_http_request "/two"
+# simulate that the browser opens this path
+#puts fake_sinatra.simulate_http_get_request "/welcome_fake"
