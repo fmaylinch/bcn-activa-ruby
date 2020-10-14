@@ -1,12 +1,16 @@
 # Ruby Barcelona Activa
 
-## Today
+## Exercise
 
 - Create an app (e.g. movie list) from scratch in a clean project
+- You can follow this [ActiveRecord guide for Sinatra]
+
+## Today
+
 - Review [Sinatra], [ActiveRecord]
-- TODO: My [ActiveRecord guide in Sinatra]
 - [Post with a form]
-- Flexbox, Google fonts, FontAwesome?
+- Flexbox, Google fonts, FontAwesome, Bootstrap...
+- [Inheritance]
 - [Procs]
 
 ## Some links
@@ -16,8 +20,9 @@
 - [ActiveRecord], [ActiveRecord in Sinatra]
 - [code documentation]
 
-
+[ActiveRecord guide for Sinatra]: sinatra-active-record.md
 [Sinatra]: https://webapps-for-beginners.rubymonstas.org/sinatra.html
+[Inheritance]: http://rubylearning.com/satishtalim/ruby_inheritance.html
 [Procs]: https://www.rubyguides.com/2016/02/ruby-procs-and-lambdas/
 [Files]: https://www.rubyguides.com/2015/05/working-with-files-ruby/
 [String.gsub]: https://www.rubyguides.com/2019/07/ruby-gsub-method/
